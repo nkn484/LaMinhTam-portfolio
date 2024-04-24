@@ -1,0 +1,171 @@
+body {
+    background-color: #fcfbf0;
+    font-family: 'Noto Serif';
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.gallery img {
+    border-radius: 10px; 
+    width: 200px; 
+    margin: 10px;
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà trong 0.3 giây */
+} 
+.gallery img:hover {
+    transform: scale(1.8);
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f7dbe9; 
+    color: rgb(255, 135, 167);
+}
+footer p, footer a {
+    color: rgb(255, 135, 167); 
+    font-family: 'Noto Serif';
+}
+.header-background {
+    background-image: url('porf.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 600px; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+      z-index: 1;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    /*50% {
+        //transform: translateX(0);
+    }*/
+    100% {
+        transform: translateX(-100%); /*Nếu bạn muốn làm kiểu thanh cuộn thì đổi translateX(-100%) và xóa dòng 52,53,54 nhé*/
+    }
+}
+.header-text {
+    color: rgba(128, 128, 128, 0.559);
+    font-family: 'Noto Serif';
+    font-size: 25px; 
+    text-align: center; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    z-index: 2;
+    /* Hiệu ứng cuộn ngang, nếu bạn muốn nó chạy thành thanh cuộn thì thay forwards = infinite */
+}
+
+.navbar {
+    background-color: white; 
+    opacity : 25%; 
+    position: sticky; 
+    top: 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    padding: 10px 0;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.3); 
+    z-index: 1000; 
+}
+.nav-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    opacity: 80%;
+}
+li {
+    float: left;
+}
+.nav_home a {
+    font-size: 1.2em; 
+}
+.nav_about a,
+.nav_products a,
+.nav_contact a {
+    font-size: 1em; 
+}
+.navbar a {
+    color: #063a44; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-family: 'Noto Sans', sans-serif;
+    margin-right: 30px;
+}
+.nav-list li a {
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.nav-list li a:hover {
+    background-color: #f660e4; 
+    color: #060606; 
+}
+
+.container {
+    display: grid ; 
+    /*background-image:url(CT-BG.jpg);*/
+}
+.sidebar {
+    padding: 20px; 
+    width: 48%; 
+    position:relative; 
+    text-align: center;
+}
+.sidebar p{
+    color: #666666; 
+    line-height: 1.6;
+    font-size: 20px;
+}
+.profile-info {
+    padding: 20px; 
+    margin-left: 52%; 
+    width: 48%;
+}
+.profile-info p {
+    color: #666666; 
+    line-height: 1.6;
+    font-size:20px ;
+}
+.profile-image {
+    width: 65%; 
+    margin: 0;
+    display: block;
+    position: absolute;
+    margin-bottom: 15px; 
+    left:50%;
+    transform: translateX(-50%);
+}
+.interests { 
+    padding: 20px; 
+    margin-left: 52%; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px; 
+    width: 48%;
+}
+.interest-block {
+    border: 1px solid #dddddd; 
+    padding: 10px; 
+    text-align: center; 
+    border-radius: 10px;
+    background-color:#ffffff; 
+}
+.interest-block:nth-of-type(1) { background-color: #f3e7a2; } 
+.interest-block:nth-of-type(2) { background-color: #f8b0d4; } 
+.interest-block:nth-of-type(3) { background-color: #cbf79e; } 
+.interest-block:nth-of-type(4) { background-color: #a9f5f5; } 
+.interest-block:nth-of-type(5) { background-color: #f7b7a0; } 
+
