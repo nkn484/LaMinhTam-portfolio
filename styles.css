@@ -1,25 +1,46 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     background-color: #fcfbf0;
     font-family: 'Noto Serif';
     font-size: 22px;
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
-
+#wrapper{
+	max-width:1200px;
+	margin: 0px auto;
+}
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+    position:static;
+    z-index: 5;
 }
 .gallery img {
     border-radius: 10px; 
     width: 200px; 
     margin: 10px;
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà trong 0.3 giây */
+    transition: transform 0.3s ease; 
 } 
 .gallery img:hover {
     transform: scale(1.8);
+    z-index: 5;
+}
+.descriptions {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.descriptions p {
+    flex: 1; 
+    text-align: center; 
 }
 footer {
     text-align: center;
@@ -32,11 +53,11 @@ footer p, footer a {
     font-family: 'Noto Serif';
 }
 .header-background {
-    background-image: url('porf.jpg');
+    background-image: url('porfofin-01.jpg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    height: 600px; 
+    height: 700px; 
     position: relative; 
     display: flex; 
     justify-content: center; 
@@ -47,38 +68,34 @@ footer p, footer a {
     0% {
         transform: translateX(100%);
     }
-    /*50% {
-        //transform: translateX(0);
-    }*/
     100% {
         transform: translateX(-100%); /*Nếu bạn muốn làm kiểu thanh cuộn thì đổi translateX(-100%) và xóa dòng 52,53,54 nhé*/
     }
 }
 .header-text {
-    color: rgba(128, 128, 128, 0.559);
+    position:absolute;
+    color: rgb(255, 135, 167);
     font-family: 'Noto Serif';
     font-size: 25px; 
-    text-align: center; 
     white-space: nowrap; 
     overflow: hidden; 
     display: inline-block;
     animation: marquee 20s linear infinite;
     z-index: 2;
-    /* Hiệu ứng cuộn ngang, nếu bạn muốn nó chạy thành thanh cuộn thì thay forwards = infinite */
 }
-
 .navbar {
     background-color: white; 
-    opacity : 25%; 
+    opacity : 100%; 
     position: sticky; 
     top: 0; 
     width: 100%; 
     display: flex; 
-    justify-content: flex-start; 
+    justify-content: center; 
     align-items: center; 
     padding: 10px 0;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.3); 
     z-index: 1000; 
+    border-radius: -10px;
 }
 .nav-list{
     list-style-type: none;
@@ -86,9 +103,6 @@ footer p, footer a {
     padding: 0;
     display: flex;
     opacity: 80%;
-}
-li {
-    float: left;
 }
 .nav_home a {
     font-size: 1.2em; 
@@ -102,8 +116,8 @@ li {
     color: #063a44; 
     text-decoration: none; 
     font-weight: bold; 
-    font-family: 'Noto Sans', sans-serif;
-    margin-right: 30px;
+    font-family: 'Lora', sans-serif;
+    margin-right: 40px;
 }
 .nav-list li a {
     transition: background-color 0.3s, color 0.3s; 
@@ -111,61 +125,210 @@ li {
 
 .nav-list li a:hover {
     background-color: #f660e4; 
-    color: #060606; 
+    color: #060606;
+    border-radius: 10px;
+    opacity: 50%;
 }
 
 .container {
-    display: grid ; 
-    /*background-image:url(CT-BG.jpg);*/
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px; 
+    padding: 20px;
 }
 .sidebar {
-    padding: 20px; 
-    width: 48%; 
-    position:relative; 
-    text-align: center;
+    flex-basis: 30%; 
+    text-align: center; 
 }
-.sidebar p{
-    color: #666666; 
+
+.sidebar dt {
+    color: #666666;
     line-height: 1.6;
-    font-size: 20px;
+    font-size: 22px;
+    text-align: left;
+}
+.sidebar p {
+    color: #666666;
+    line-height: 1.6;
+    font-size: 18px;
+    text-align: justify;
 }
 .profile-info {
-    padding: 20px; 
-    margin-left: 52%; 
-    width: 48%;
+    grid-column: 2/3; 
+    text-align: left; 
+    align-self: start;
 }
+
 .profile-info p {
-    color: #666666; 
+    color: #666666;
     line-height: 1.6;
-    font-size:20px ;
+    font-size: 20px;
+    margin-top: 10%;
 }
-.profile-image {
-    width: 65%; 
-    margin: 0;
-    display: block;
-    position: absolute;
-    margin-bottom: 15px; 
-    left:50%;
-    transform: translateX(-50%);
+/*
+.interests {
+    grid-column: 2/3; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    align-self: end;
 }
-.interests { 
-    padding: 20px; 
-    margin-left: 52%; 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-    gap: 20px; 
-    width: 48%;
+*/
+.interests {
+    display: grid;
+    align-self: end;
+    grid-template-columns: repeat(3, 1fr); /* Tạo ra 3 cột */
+    grid-template-rows: auto auto; /* Tạo ra 2 hàng */
+    grid-template-areas: 
+        "interest1 interest2 interest3"
+        "interest4 interest5 interest6"; /* Sắp xếp các khối theo kiểu zig-zag */
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các khối */
 }
+
+.interest-block:nth-child(1) { grid-area: interest1; }
+.interest-block:nth-child(2) { grid-area: interest2; }
+.interest-block:nth-child(3) { grid-area: interest3; }
+.interest-block:nth-child(4) { grid-area: interest4; }
+.interest-block:nth-child(5) { grid-area: interest5; }
+.interest-block:nth-child(6) { grid-area: interest6; }
+
 .interest-block {
-    border: 1px solid #dddddd; 
-    padding: 10px; 
-    text-align: center; 
-    border-radius: 10px;
-    background-color:#ffffff; 
+    border: 2px solid #ffe94d;
+    padding: 10px;
+    text-align: center;
+    border-radius: 290px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-family: 'Noto Sans';
+    text-emphasis-color: #666666;
 }
-.interest-block:nth-of-type(1) { background-color: #f3e7a2; } 
-.interest-block:nth-of-type(2) { background-color: #f8b0d4; } 
-.interest-block:nth-of-type(3) { background-color: #cbf79e; } 
-.interest-block:nth-of-type(4) { background-color: #a9f5f5; } 
-.interest-block:nth-of-type(5) { background-color: #f7b7a0; } 
+.decor{
+    display: flex;
+    justify-content: center;
+}
+.lan{
+    color: rgb(255, 135, 167);
+    font-family: 'Noto Serif';
+    font-size: 22px;
+    text-align: center;
+}
+.prj {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: rgb(255, 135, 167);
+    font-family: 'Noto Serif';
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+    z-index: 2;
+}
+
+.container_video {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    padding: 10px;
+}
+.left {
+    grid-column: 1/2;
+    display: flex; 
+    flex-direction: column;  
+    align-items: center; 
+}
+.left p {
+    margin-bottom: 20px;
+    text-align: center; 
+}
+.left img {
+    max-width: 95%; 
+    height: auto; 
+}
+.right {
+    grid-column: 2;
+}
+.right video {
+    width: 95%; 
+    height: auto; 
+    align-items: center;
+    justify-items: center;
+    border-radius: 10% ;
+}
+footer {
+    background-color: #f7dbe9;
+    text-align: center;
+    padding: 20px;
+    color: rgb(255, 135, 167);
+}
+
+footer h2 {
+    color: rgb(255, 135, 167);
+    text-decoration: underline;
+}
+
+footer p {
+    color: rgb(255, 135, 167);
+}
+
+.containfooter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.containfooter .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black; /* Màu chữ đen */
+    font-family: 'Noto Serif', serif; /* Font Noto Serif */
+    width: 100%;
+}
+
+.containfooter button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Hình tròn */
+    border: none;
+    background-color: #313638;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain; /* Ngăn chặn icon bị bóp méo */
+}
+
+.icon {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
+}
+
+/* Màu cụ thể cho từng nút khi hover */
+.containfooter button.email:hover {
+    background-color: #f72723;
+}
+
+.containfooter button.phone:hover {
+    background-color: #048d07;
+}
+
+.containfooter button.facebook:hover {
+    background-color: #1351fa;
+}
+
+.containfooter button.instagram:hover {
+    background-color: #f55c83;
+}
+
+footer span {
+    color: white;
+    margin-left: 5px;
+}
 

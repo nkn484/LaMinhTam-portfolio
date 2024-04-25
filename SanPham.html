@@ -7,54 +7,132 @@
     <link rel="stylesheet" href="styles.css">
     <link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <script src="Scroll.js"></script>
+
 </head>
 <body>
     <nav class="navbar">
         <ul class="nav-list">
-            <li class="nav-home"><a href="#home">Home</a></li>
-            <li class="nav_about"><a href="#about">About Me</a></li>
+            <li class="nav-home"><a href="#" onclick="scrollToTop()">Home</a></li>
+            <li class="nav_about"><a href="#about-me">About Me</a></li>
             <li class="nav_products"><a href="#products">Products</a></li>
             <li class="nav_contact"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <div id="wrapper">
+    <script>
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        </script>
 <header>
 <div class="header-background">
 </div>
     <div class="header-text">
-Dedicated and hardworking graphic design student with knowledge, illustration skills and computer skills which can contribute to the success of company and self-advancement
+        ⋆˚✿˖°&nbsp;&nbsp;&nbsp;Know me more&nbsp;&nbsp;&nbsp;⋆˚✿˖°&nbsp;&nbsp;&nbsp;Know me more&nbsp;&nbsp;&nbsp;⋆˚✿˖°&nbsp;&nbsp;&nbsp;Know me more&nbsp;&nbsp;&nbsp;⋆˚✿˖°
 </div>
 </header>
 <div class="container">
 <div class="sidebar">
-    <img src="ProfileImage.jpg"  class="profile-image">
-    <p>Hi, I'm Julia, aspiring to becomce a multimedia creator in near future. So now I'm trying and challenge myself with a few projects. Almost my products are feminine and modern style with pastel or bright colors, hope everyone enjoy them ⋅˚₊‧ ୨୧ ‧₊˚ ⋅</p>
+    <img src="ProfileImage.png"  class="profile-image" width="100%">
+    <dt>Hi, I'm Julia,</dt>
+    <p>Aspiring to becomce a multimedia creator in near future. So now I'm trying and challenge myself with a few projects. Almost my products are feminine and modern style with pastel or bright colors, hope everyone enjoy them ⋅˚₊‧ ୨୧ ‧₊˚ ⋅</p>
 </div>
-<div class="profile-info">
+<div class="profile">
+<div class="profile-info" id="about-me">
     <p>Name: La Minh Tam<br>
         DOB: 19/04/2004<br>
         Live in Ha Noi<br>
-        Education: Posts and Telecommunications institute of Technology (2022- Now)</p>
+        Education: Posts and Telecommunications institute of Technology <br>
+        (2022- Now)<br>
+        <br>
+        My interest
+    </p>
 </div>
 <div class="interests">
     <div class="interest-block">reading</div>
     <div class="interest-block">music</div>
     <div class="interest-block">photography</div>
-    <div class="interest-block">traveling</div>
+    <div class="interest-block">travelling</div>
     <div class="interest-block">filming</div>
+    <div class="interest-block">journaling</div>
+</div>
+<div class="decor">
+    <img src="bb39102af62f9a2c50933609dd026bdb.png" alt="decor1" width="30%">
 </div>
 </div>
-<div class="gallery">
+</div>
+<div class="lan">
+    <p>Languages</p>
+    <img src="lanfin-01.png" alt="lan" width="70%">
+</div>
+<div class="prj">
+    My abilities & projects
+</div>
+<br>
+</div>
+<div class="gallery" id="products">
     <img src="UploadImage1.jpg" alt="Image 1">
     <img src="UploadImage2.jpg" alt="Image 2">
     <img src="UploadImage3.jpg" alt="Image 3">
     <img src="UploadImage4.jpg" alt="Image 4">
 </div>
+<br>
+<div class="descriptions">
+    <p>Illustration design</p>
+    <p>Social post</p>
+    <p>Photograph</p>
+    <p>Branding</p>
+</div>
+<br>
+<div class="blog">
+    <img src="blogfin.png" alt="blog" width=100%>
+</div>
+<br>
+<div class="container_video">
+    <div class="left">
+        <p>Đoạn text mô tả</p>
+        <img src="lan.png" alt="Logo">
+    </div>
+    <div class="right">
+        <video width="80%" controls>
+            <source src="Test.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+    </div>
+</div>
 
-<footer>
-   <h2>THANK YOU</h2>
-   <p>See you soon!</p>
+</div>
+<footer id="contact">
+    <h2>THANK YOU</h2>
+    <p>See you soon!</p>
+    <div class="containfooter">
+        <div class="info">
+            <button class="email">
+                <img src="email.svg" alt="Email Icon" class="icon">
+            </button>
+            <span>example@email.com</span>
+        </div>
+        <div class="info">
+            <button class="phone">
+                <img src="phone.svg" alt="Phone Icon" class="icon">
+            </button>
+            <span>+123456789</span>
+        </div>
+        <div class="info">
+            <button class="facebook">
+                <img src="facebook.svg" alt="Facebook Icon" class="icon">
+            </button>
+            <span>facebook.com/yourprofile</span>
+        </div>
+        <div class="info">
+            <button class="instagram">
+                <img src="instagram.svg" alt="Instagram Icon" class="icon">
+            </button>
+            <span>instagram.com/yourprofile</span>
+        </div>
+    </div>
 </footer>
-
 </body>
 </html>
